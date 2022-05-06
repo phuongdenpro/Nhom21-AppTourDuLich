@@ -1,6 +1,7 @@
 package com.example.travel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,13 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
     public TourViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View tourView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.tour_item, parent, false);
+        tourView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context,Detail.class);
+                context.startActivity(i);
+            }
+        });
         return new TourViewHolder(tourView);
     }
 
