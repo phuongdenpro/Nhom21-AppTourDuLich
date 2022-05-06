@@ -3,12 +3,14 @@ package com.example.travel;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +21,7 @@ public class ForgotPassword extends AppCompatActivity {
     private EditText editTextEmail;
     private Button btnResetPassword;
     private ProgressBar progressBar;
+    private TextView tvsigin_forgot;
 
     private FirebaseAuth mAuth;
 
@@ -30,13 +33,19 @@ public class ForgotPassword extends AppCompatActivity {
         editTextEmail = findViewById(R.id.id_email_forgot_password);
         btnResetPassword = findViewById(R.id.btn_reset_password);
         progressBar = findViewById(R.id.progresBar_forgotPw);
-
+        tvsigin_forgot = findViewById(R.id.tvSigin_forgot);
         mAuth = FirebaseAuth.getInstance();
 
         btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 resetPassword();
+            }
+        });
+        tvsigin_forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ForgotPassword.this,MainActivity.class));
             }
         });
     }
