@@ -11,22 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Travel">
         <activity
-            android:name=".Detail"
+            android:name=".DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPassword"
+            android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterUser"
+            android:name=".RegisterUserActivity"
             android:exported="false" />
         <activity
             android:name=".AddPlaceActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

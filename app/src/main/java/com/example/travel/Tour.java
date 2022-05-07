@@ -1,6 +1,8 @@
 package com.example.travel;
 
-public class Tour {
+import java.io.Serializable;
+
+public class Tour implements Serializable {
     private String namePlace;
     private String Descriptive;
     private String Locate;

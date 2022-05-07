@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class ForgotPassword extends AppCompatActivity {
+public class ForgotPasswordActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private Button btnResetPassword;
     private ProgressBar progressBar;
@@ -45,7 +45,7 @@ public class ForgotPassword extends AppCompatActivity {
         tvsigin_forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ForgotPassword.this,MainActivity.class));
+                startActivity(new Intent(ForgotPasswordActivity.this,MainActivity.class));
             }
         });
     }
@@ -65,9 +65,9 @@ public class ForgotPassword extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(ForgotPassword.this, "Please check your email to reset password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPasswordActivity.this, "Please check your email to reset password!", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(ForgotPassword.this, "Something wrong! please try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPasswordActivity.this, "Something wrong! please try again", Toast.LENGTH_SHORT).show();
                 }
             }
         });

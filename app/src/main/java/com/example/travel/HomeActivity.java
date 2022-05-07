@@ -9,8 +9,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,11 +23,12 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Tour> tourList;
     private TourAdapter tourAdapter;
     private ImageView imgPlus;
+    private DatabaseReference databaseReference;
     private FirebaseStorage ref;
     private StorageReference storageReference;
     private Uri imgUri;
@@ -37,13 +38,30 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         recyclerView = findViewById(R.id.recycler_view);
-        tourList = new ArrayList<>();
-        tourAdapter = new TourAdapter(this,tourList);
-        recyclerView.setAdapter(tourAdapter);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ref = FirebaseStorage.getInstance();
-        storageReference = ref.getReference();
+        tourList = new ArrayList<>();
+
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("tours");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot tourshSnapshot : snapshot.getChildren()){
+                    Tour tour = tourshSnapshot.getValue(Tour.class);
+                    tourList.add(tour);
+                }
+                tourAdapter = new TourAdapter(HomeActivity.this,tourList);
+                recyclerView.setAdapter(tourAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(HomeActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
 
@@ -51,7 +69,7 @@ public class Home extends AppCompatActivity {
         imgPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Home.this, AddPlaceActivity.class);
+                Intent i = new Intent(HomeActivity.this, AddPlaceActivity.class);
                 startActivity(i);
             }
         });

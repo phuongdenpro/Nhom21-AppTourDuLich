@@ -12,18 +12,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.os.Handler;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -138,7 +135,7 @@ public class AddPlaceActivity extends AppCompatActivity {
                                     edPrice.setText("");
                                     imageView.setImageResource(R.drawable.botron_image);
                                     Toast.makeText(AddPlaceActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(AddPlaceActivity.this,Home.class));
+                                    startActivity(new Intent(AddPlaceActivity.this, HomeActivity.class));
                                 }else{
                                 Toast.makeText(AddPlaceActivity.this, "Failure! please check internet connection!", Toast.LENGTH_SHORT).show();
                             }

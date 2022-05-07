@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterUser extends AppCompatActivity implements View.OnClickListener{
+public class RegisterUserActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView tvLogin;
     private EditText editTextName,editTextEmail,editTextPassword,editTextConfirmPassword;
@@ -52,7 +52,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.tv_sign_in_register:
-                startActivity(new Intent(RegisterUser.this,MainActivity.class));
+                startActivity(new Intent(RegisterUserActivity.this,MainActivity.class));
                 break;
             case R.id.btn_register_register:
                 registerUser();
@@ -113,21 +113,21 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
-                                                Toast.makeText(RegisterUser.this, "User has been register successfully", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(RegisterUserActivity.this, "User has been register successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
                                     }
                                     else {
-                                        Toast.makeText(RegisterUser.this, "Failed to register! try again!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterUserActivity.this, "Failed to register! try again!", Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
 
 
                             });
-                            Intent i = new Intent(RegisterUser.this,MainActivity.class);
+                            Intent i = new Intent(RegisterUserActivity.this,MainActivity.class);
                             startActivity(i);
                         }else {
-                            Toast.makeText(RegisterUser.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterUserActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
 

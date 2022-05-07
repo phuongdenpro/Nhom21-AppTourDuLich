@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,8 +18,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnSingIn;
@@ -60,10 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 userLogin();
                 break;
             case R.id.tv_forgot_pass_login:
-                startActivity(new Intent(MainActivity.this,ForgotPassword.class));
+                startActivity(new Intent(MainActivity.this, ForgotPasswordActivity.class));
                 break;
             case R.id.tv_register_login:
-                startActivity(new Intent(MainActivity.this,RegisterUser.class));
+                startActivity(new Intent(MainActivity.this, RegisterUserActivity.class));
                 break;
 
         }
@@ -106,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (task.isSuccessful()){
                     FirebaseUser user =FirebaseAuth.getInstance().getCurrentUser();
                     if (user.isEmailVerified()){
-                        startActivity(new Intent(MainActivity.this,Home.class));
+                        startActivity(new Intent(MainActivity.this, HomeActivity.class));
                         Toast.makeText(MainActivity.this, "Login Successful!!!", Toast.LENGTH_SHORT).show();
                     }else {
                         user.sendEmailVerification();
