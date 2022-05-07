@@ -19,9 +19,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -40,6 +42,7 @@ public class AddPlaceActivity extends AppCompatActivity {
     private ImageView imageView;
     private FirebaseAuth mAuth;
     private DatabaseReference myReference;
+    private FirebaseDatabase database;
     private Context context;
     private FirebaseStorage ref;
     private StorageReference storageReference;
@@ -60,7 +63,8 @@ public class AddPlaceActivity extends AppCompatActivity {
         mProgressBar = findViewById(R.id.progress_bar);
 
         storageReference = FirebaseStorage.getInstance().getReference("tours");
-        myReference = FirebaseDatabase.getInstance().getReference("tours");
+        myReference = FirebaseDatabase.getInstance().getReference();
+
 
         btnUploadimg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,13 +121,28 @@ public class AddPlaceActivity extends AppCompatActivity {
                                 }
                             }, 500);
 
-                            Toast.makeText(AddPlaceActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
-                            Tour tour = new Tour(edName.getText().toString().trim(),edDes.getText().toString().trim(),
-                                    edLocal.getText().toString().trim(),Integer.parseInt(edPrice.getText().toString().trim()),
-                                    taskSnapshot.getUploadSessionUri().toString());
+
+
+                            Tour tour = new Tour(edName.getText().toString().trim(), edDes.getText().toString().trim(),
+                                    edLocal.getText().toString().trim(), Integer.parseInt(edPrice.getText().toString().trim()),
+                                    taskSnapshot.getUploadSessionUri().toString().trim());
 
                             String tourId = myReference.push().getKey();
-                            myReference.child(tourId).setValue(tour);
+
+                            myReference.child("tours").child(tourId).setValue(tour).addOnCompleteListener(task -> {
+                                if(task.isSuccessful()){
+                                    edName.setText("");
+                                    edName.requestFocus();
+                                    edDes.setText("");
+                                    edLocal.setText("");
+                                    edPrice.setText("");
+                                    imageView.setImageResource(R.drawable.botron_image);
+                                    Toast.makeText(AddPlaceActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(AddPlaceActivity.this,Home.class));
+                                }else{
+                                Toast.makeText(AddPlaceActivity.this, "Failure! please check internet connection!", Toast.LENGTH_SHORT).show();
+                            }
+                            });
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

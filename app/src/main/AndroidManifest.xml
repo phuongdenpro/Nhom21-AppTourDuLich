@@ -23,10 +23,10 @@
             android:name=".RegisterUser"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AddPlaceActivity"
             android:exported="false" />
         <activity
-            android:name=".AddPlaceActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -38,9 +38,6 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         recyclerView = findViewById(R.id.recycler_view);
         tourList = new ArrayList<>();
-//        tourList.add(new Tour("Ho Chi minh","fdffdf","VietNam",45555,R.drawable.rectangle_5));
-//        tourList.add(new Tour("Ho Chi minh","fdffdf","VietNam",45555,R.drawable.rectangle_5));
-//        tourList.add(new Tour("Ho Chi minh","fdffdf","VietNam",45555,R.drawable.rectangle_5));
         tourAdapter = new TourAdapter(this,tourList);
         recyclerView.setAdapter(tourAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

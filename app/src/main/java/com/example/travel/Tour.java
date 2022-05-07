@@ -1,10 +1,10 @@
 package com.example.travel;
 
 public class Tour {
-    public String namePlace;
-    public String Descriptive;
-    public String Locate;
-    public int price;
+    private String namePlace;
+    private String Descriptive;
+    private String Locate;
+    private int price;
     private String imageURL;
 
 
