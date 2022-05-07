@@ -52,6 +52,15 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
                 context.startActivity(i);
             }
         });
+        holder.imgPlace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, DetailActivity.class);
+                Bundle bundle = new Bundle();
+                i.putExtra("tour",tour);
+                context.startActivity(i);
+            }
+        });
     }
 
 
