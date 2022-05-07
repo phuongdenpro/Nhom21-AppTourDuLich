@@ -44,7 +44,7 @@
     <EditText
         android:id="@+id/yourNamePlace"
         android:layout_width="337dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="43dp"
         android:layout_marginEnd="29dp"
@@ -55,45 +55,48 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/descriptivePlace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view5" />
 
     <EditText
         android:id="@+id/descriptivePlace"
         android:layout_width="337dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="29dp"
         android:ems="10"
         android:hint="Desctiptive place"
         android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourNamePlace" />
 
     <EditText
         android:id="@+id/locatedAt"
         android:layout_width="337dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="29dp"
         android:ems="10"
         android:hint="Located at"
         android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descriptivePlace" />
 
     <EditText
         android:id="@+id/price"
         android:layout_width="337dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="29dp"
         android:ems="10"
         android:hint="Price"
@@ -103,32 +106,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locatedAt" />
 
-    <View
-        android:id="@+id/view6"
-        android:layout_width="385dp"
-        android:layout_height="266dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/botron_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price" />
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAddImg"
         android:layout_width="234dp"
         android:layout_height="56dp"
 
-        android:layout_marginTop="104dp"
         android:background="@drawable/botron_btn_image"
 
         android:fontFamily="sans-serif-medium"
         android:text="Add image"
         android:textSize="20sp"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/view6"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/view6"
-        app:layout_constraintTop_toTopOf="@+id/view6" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgAdd"
+        app:layout_constraintEnd_toEndOf="@+id/imgAdd"
+        app:layout_constraintStart_toStartOf="@+id/imgAdd"
+        app:layout_constraintTop_toTopOf="@+id/imgAdd" />
+
+
+    <ImageView
+        android:id="@+id/imgAdd"
+        android:layout_width="355dp"
+        android:layout_height="258dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price"
+        app:srcCompat="@drawable/botron_image" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/addNew"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/addNew"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAdd"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/addNew"
+        android:layout_width="161dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/botron_btn_image"
+        android:backgroundTint="#18E60A"
+        android:text="Add"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,12 +5,13 @@ public class Tour {
     public String Descriptive;
     public String Locate;
     public int price;
-    private int imageURL;
+    private String imageURL;
+
 
     public Tour() {
     }
 
-    public Tour(String namePlace, String descriptive, String locate, int price, int imageURL) {
+    public Tour(String namePlace, String descriptive, String locate, int price, String imageURL) {
         this.namePlace = namePlace;
         this.Descriptive = descriptive;
         this.Locate = locate;
@@ -50,11 +51,11 @@ public class Tour {
         this.price = price;
     }
 
-    public int getImageURL() {
+    public String getImageURL() {
         return imageURL;
     }
 
-    public void setImageURL(int imageURL) {
+    public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
 }

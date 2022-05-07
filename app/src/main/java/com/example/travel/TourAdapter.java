@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -69,7 +70,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
         }
 
         private void setPostData(Tour tour) {
-            imgPlace.setImageResource(tour.getImageURL());
+            imgPlace.setDrawingCacheEnabled(true);
             tvName.setText(tour.getNamePlace());
         }
     }
