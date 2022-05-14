@@ -106,30 +106,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locatedAt" />
 
+
     <Button
         android:id="@+id/btnAddImg"
-        android:layout_width="234dp"
-        android:layout_height="56dp"
-
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="154dp"
         android:background="@drawable/botron_btn_image"
-
         android:fontFamily="sans-serif-medium"
         android:text="Add image"
         android:textSize="20sp"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAdd"
-        app:layout_constraintEnd_toEndOf="@+id/imgAdd"
-        app:layout_constraintStart_toStartOf="@+id/imgAdd"
-        app:layout_constraintTop_toTopOf="@+id/imgAdd" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAdd" />
 
     <ImageView
         android:id="@+id/imgAdd"
-        android:layout_width="355dp"
-        android:layout_height="258dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="327dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/price"
         app:srcCompat="@drawable/botron_image" />
@@ -141,13 +141,12 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/addNew"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/addNew"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgAdd"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAddImg"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/addNew"

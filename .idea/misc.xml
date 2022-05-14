@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/drawable/botron_btn_image.xml" value="0.242" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/drawable/botron_btn_register.xml" value="0.242" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/drawable/botron_image.xml" value="0.242" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/drawable/botron_image_detail.xml" value="0.242" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/drawable/ic_eye.xml" value="0.242" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/drawable/ic_launcher_background.xml" value="0.242" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/drawable/layout_border.xml" value="0.242" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/layout/activity_addnew.xml" value="0.2" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/layout/activity_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/layout/activity_register_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/DiDong(ThucHanh)/Nhom21_AppTourDuLich/app/src/main/res/layout/tour_item.xml" value="0.25416666666666665" />
         <entry key="..\:/HocKi6/ltDiDong/Projects/Travel/app/src/main/res/layout/activity_detail.xml" value="0.17395833333333333" />
         <entry key="..\:/HocKi6/ltDiDong/Projects/Travel/app/src/main/res/layout/activity_forgot_password.xml" value="0.17395833333333333" />
         <entry key="..\:/HocKi6/ltDiDong/Projects/Travel/app/src/main/res/layout/activity_home.xml" value="0.17395833333333333" />
