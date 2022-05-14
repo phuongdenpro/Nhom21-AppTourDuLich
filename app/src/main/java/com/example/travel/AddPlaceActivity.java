@@ -125,7 +125,7 @@ public class AddPlaceActivity extends AppCompatActivity {
                                     taskSnapshot.getUploadSessionUri().toString().trim());
 
                             String tourId = myReference.push().getKey();
-
+                            tour.setTourId(tourId);
                             myReference.child("tours").child(tourId).setValue(tour).addOnCompleteListener(task -> {
                                 if(task.isSuccessful()){
                                     edName.setText("");

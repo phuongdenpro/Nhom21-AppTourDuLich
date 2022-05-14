@@ -3,6 +3,7 @@ package com.example.travel;
 import java.io.Serializable;
 
 public class Tour implements Serializable {
+    private String tourId;
     private String namePlace;
     private String Descriptive;
     private String Locate;
@@ -59,5 +60,13 @@ public class Tour implements Serializable {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public String getTourId() {
+        return tourId;
+    }
+
+    public void setTourId(String tourId) {
+        this.tourId = tourId;
     }
 }

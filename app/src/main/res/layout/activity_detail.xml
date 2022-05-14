@@ -32,29 +32,16 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
         android:fontFamily="sans-serif-medium"
         android:text="DETAIL PLACE"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/view7"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="43dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-
-        app:layout_constraintBottom_toBottomOf="@+id/view7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/plus_button" />
 
     <ImageView
         android:id="@+id/image_detail"
@@ -138,5 +125,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_suadetail"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="604dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_xoadetail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/edit"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_xoadetail"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="604dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/del"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView_addtail"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="@+id/view7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

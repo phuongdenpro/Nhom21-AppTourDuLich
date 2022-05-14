@@ -24,9 +24,12 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
 
 
 
+
+
     public TourAdapter( Context context,List<Tour> tourList) {
         this.tourList = tourList;
         this.context = context;
+
     }
 
     @NonNull
