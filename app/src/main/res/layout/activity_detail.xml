@@ -115,11 +115,8 @@
         android:id="@+id/btn_Booknow"
         android:layout_width="416dp"
         android:layout_height="77dp"
-
         android:background="@drawable/botron_btn_image"
         android:text="Book Now"
-
-
         android:textSize="30sp"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
