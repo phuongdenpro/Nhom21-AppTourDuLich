@@ -177,6 +177,26 @@ public class DetailActivity extends AppCompatActivity {
                 String des = edtupdatedes.getText().toString().trim();
                 String Local = edtupdatelocal.getText().toString().trim();
                 String price = edtupdateprice.getText().toString().trim();
+                if(name.equals("")){
+                    Toast.makeText(DetailActivity.this,"Name not null!!!",Toast.LENGTH_SHORT).show();
+                    edtupdatename.requestFocus();
+                    return;
+                }
+                if(des.equals("")){
+                    Toast.makeText(DetailActivity.this,"Descriptive not null!!!",Toast.LENGTH_SHORT).show();
+                    edtupdatedes.requestFocus();
+                    return;
+                }
+                if(Local.equals("")){
+                    Toast.makeText(DetailActivity.this,"Locate not null!!!",Toast.LENGTH_SHORT).show();
+                    edtupdatelocal.requestFocus();
+                    return;
+                }
+                if(price.equals("")){
+                    Toast.makeText(DetailActivity.this,"Price not null!!!",Toast.LENGTH_SHORT).show();
+                    edtupdateprice.requestFocus();
+                    return;
+                }
                 tour.setNamePlace(name);
                 tour.setDescriptive(des);
                 tour.setLocate(Local);

@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="69dp"
-            android:background="#EF0D0D"
+            android:background="#147365"
             android:gravity="center"
             android:padding="12dp"
             android:text="Update Place"
@@ -20,23 +20,58 @@
             android:textSize="34sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="5dp"
+            android:text="Name"
+            android:textColor="@color/black"
+
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/name_update"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:hint="Your name place" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="5dp"
+            android:text="Desctiptive"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/des_update"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:hint="Desctiptive place" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="5dp"
+            android:text="Located at"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/local_update"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:hint="Located at" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="5dp"
+            android:text="Price"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/pr_update"
