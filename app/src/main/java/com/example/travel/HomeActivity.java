@@ -76,9 +76,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         imgPlus = findViewById(R.id.imageViewAdd);
         imgPlus.setOnClickListener(new View.OnClickListener() {
             @Override
