@@ -175,11 +175,11 @@ public class DetailActivity extends AppCompatActivity {
                 DatabaseReference reference = database.getReference("tours");
                 String name = edtupdatename.getText().toString().trim();
                 String des = edtupdatedes.getText().toString().trim();
-                String local = edtupdatelocal.getText().toString().trim();
+                String Local = edtupdatelocal.getText().toString().trim();
                 String price = edtupdateprice.getText().toString().trim();
                 tour.setNamePlace(name);
                 tour.setDescriptive(des);
-                tour.setLocate(local);
+                tour.setLocate(Local);
                 tour.setPrice(Integer.parseInt(price));
                 reference.child(tour.getTourId()).updateChildren(tour.toMap()).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

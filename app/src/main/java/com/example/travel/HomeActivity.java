@@ -5,13 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     private List<Tour> tourList;
     private TourAdapter tourAdapter;
     private ImageView imgPlus;
+    private ImageView imgLogout;
     private DatabaseReference databaseReference;
     private FirebaseStorage ref;
     private StorageReference storageReference;
@@ -75,7 +87,30 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        imgLogout = findViewById(R.id.imgLogout);
+        imgLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
+            }
+        });
 
+    }
+
+    private void logout() {
+        new AlertDialog.Builder(this).setTitle(getString(R.string.app_name))
+                .setMessage("Do you want to logout?")
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(HomeActivity.this,"Logout successfull!!!",Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(HomeActivity.this,MainActivity.class));
+                            }
+                        }
+
+                )
+                .setNegativeButton("Cancel",null)
+                .show();
     }
 
 }

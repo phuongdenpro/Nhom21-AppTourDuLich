@@ -16,10 +16,10 @@ public class Tour implements Serializable {
     public Tour() {
     }
 
-    public Tour(String namePlace, String descriptive, String locate, int price, String imageURL) {
+    public Tour(String namePlace, String descriptive, String Locate, int price, String imageURL) {
         this.namePlace = namePlace;
         this.Descriptive = descriptive;
-        this.Locate = locate;
+        this.Locate = Locate;
         this.price = price;
         this.imageURL = imageURL;
     }
