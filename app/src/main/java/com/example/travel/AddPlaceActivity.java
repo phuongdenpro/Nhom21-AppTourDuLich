@@ -58,7 +58,7 @@ public class AddPlaceActivity extends AppCompatActivity {
         edPrice = findViewById(R.id.price);
         imageView = findViewById(R.id.imgAdd);
         mProgressBar = findViewById(R.id.progress_bar);
-
+        mProgressBar.setVisibility(View.INVISIBLE);
         storageReference = FirebaseStorage.getInstance().getReference("tours");
         myReference = FirebaseDatabase.getInstance().getReference();
 
@@ -93,7 +93,7 @@ public class AddPlaceActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             imgUri = data.getData();
-            Picasso.get().load(imgUri).into(imageView);
+            Picasso.get().load(imgUri).fit().centerCrop().into(imageView);
         }
     }
     private String getFileExtension(Uri uri) {
@@ -119,26 +119,30 @@ public class AddPlaceActivity extends AppCompatActivity {
                             }, 500);
 
 
-
-                            Tour tour = new Tour(edName.getText().toString().trim(), edDes.getText().toString().trim(),
-                                    edLocal.getText().toString().trim(), Integer.parseInt(edPrice.getText().toString().trim()),
-                                    taskSnapshot.getUploadSessionUri().toString().trim());
-
-                            String tourId = myReference.push().getKey();
-                            tour.setTourId(tourId);
-                            myReference.child("tours").child(tourId).setValue(tour).addOnCompleteListener(task -> {
-                                if(task.isSuccessful()){
-                                    edName.setText("");
-                                    edName.requestFocus();
-                                    edDes.setText("");
-                                    edLocal.setText("");
-                                    edPrice.setText("");
-                                    imageView.setImageResource(R.drawable.botron_image);
-                                    Toast.makeText(AddPlaceActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(AddPlaceActivity.this, HomeActivity.class));
-                                }else{
-                                Toast.makeText(AddPlaceActivity.this, "Failure! please check internet connection!", Toast.LENGTH_SHORT).show();
-                            }
+                            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String url = uri.toString();
+                                    Tour tour = new Tour(edName.getText().toString().trim(), edDes.getText().toString().trim(),
+                                            edLocal.getText().toString().trim(), Integer.parseInt(edPrice.getText().toString().trim()),
+                                            url);
+                                    String tourId = myReference.push().getKey();
+                                    tour.setTourId(tourId);
+                                    myReference.child("tours").child(tourId).setValue(tour).addOnCompleteListener(task -> {
+                                        if(task.isSuccessful()){
+                                            edName.setText("");
+                                            edName.requestFocus();
+                                            edDes.setText("");
+                                            edLocal.setText("");
+                                            edPrice.setText("");
+                                            imageView.setImageResource(R.drawable.botron_image);
+                                            Toast.makeText(AddPlaceActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(AddPlaceActivity.this, HomeActivity.class));
+                                        }else{
+                                            Toast.makeText(AddPlaceActivity.this, "Failure! please check internet connection!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
                             });
                         }
                     })

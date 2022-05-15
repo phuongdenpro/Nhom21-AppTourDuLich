@@ -43,17 +43,19 @@ public class HomeActivity extends AppCompatActivity {
 
         tourList = new ArrayList<>();
 
-
+        tourAdapter = new TourAdapter(HomeActivity.this,tourList);
+        recyclerView.setAdapter(tourAdapter);
         databaseReference = FirebaseDatabase.getInstance().getReference("tours");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                tourList.clear();
                 for(DataSnapshot tourshSnapshot : snapshot.getChildren()){
                     Tour tour = tourshSnapshot.getValue(Tour.class);
                     tourList.add(tour);
                 }
-                tourAdapter = new TourAdapter(HomeActivity.this,tourList);
-                recyclerView.setAdapter(tourAdapter);
+                tourAdapter.notifyDataSetChanged();
+
             }
 
             @Override

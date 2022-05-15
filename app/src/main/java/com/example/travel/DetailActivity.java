@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
@@ -82,9 +84,12 @@ public class DetailActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference reference = database.getReference("tours");
+                        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+                        StorageReference imgref = firebaseStorage.getReferenceFromUrl(tour.getImageURL());
                         reference.child(tour.getTourId()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
+                                imgref.delete();
                                 Toast.makeText(DetailActivity.this,"Delete data success!!",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(DetailActivity.this,HomeActivity.class));
                             }
