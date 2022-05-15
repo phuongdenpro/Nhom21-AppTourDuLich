@@ -33,7 +33,7 @@ import com.squareup.picasso.Picasso;
 
 public class AddPlaceActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
-    private Button btnAdd, btnUploadimg;
+    private Button btnAdd;
     private EditText edName, edDes, edLocal,edPrice;
     private ProgressBar mProgressBar;
     private ImageView imageView;
@@ -50,7 +50,6 @@ public class AddPlaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addnew);
 
-        btnUploadimg = findViewById(R.id.btnAddImg);
         btnAdd = findViewById(R.id.addNew);
         edName = findViewById(R.id.yourNamePlace);
         edDes = findViewById(R.id.descriptivePlace);
@@ -63,7 +62,7 @@ public class AddPlaceActivity extends AppCompatActivity {
         myReference = FirebaseDatabase.getInstance().getReference();
 
 
-        btnUploadimg.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openFileChooser();

@@ -1,6 +1,8 @@
 package com.example.travel;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Tour implements Serializable {
     private String tourId;
@@ -68,5 +70,13 @@ public class Tour implements Serializable {
 
     public void setTourId(String tourId) {
         this.tourId = tourId;
+    }
+    public Map<String,Object> toMap(){
+        HashMap<String,Object> result = new HashMap<>();
+        result.put("namePlace",namePlace);
+        result.put("Descriptive",Descriptive);
+        result.put("Locate",Locate);
+        result.put("price",price);
+        return result;
     }
 }
