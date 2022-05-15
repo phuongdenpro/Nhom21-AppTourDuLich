@@ -167,19 +167,19 @@ public class AddPlaceActivity extends AppCompatActivity {
     }
     public boolean checkData(){
         if(edName.getText().toString().equals("")){
-            Toast.makeText(AddPlaceActivity.this, "Name not null!!!", Toast.LENGTH_LONG).show();
+            edName.setError("Name is required!");
             edName.requestFocus();
             return false;
         }else if (edDes.getText().toString().equals("")){
-            Toast.makeText(AddPlaceActivity.this, "Desctiptive not null!!!", Toast.LENGTH_LONG).show();
+            edDes.setError("Please type description for this place!");
             edDes.requestFocus();
             return false;
         }else if(edLocal.getText().toString().equals("")){
-            Toast.makeText(AddPlaceActivity.this, "Local not null!!!", Toast.LENGTH_LONG).show();
+            edLocal.setError("Address is required!");
             edLocal.requestFocus();
             return false;
         }else if(edPrice.getText().toString().equals("")){
-            Toast.makeText(AddPlaceActivity.this, "Price not null!!!", Toast.LENGTH_LONG).show();
+            edPrice.setError("Price is required!");
             edPrice.requestFocus();
             return false;
         }

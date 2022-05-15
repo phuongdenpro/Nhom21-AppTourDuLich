@@ -17,7 +17,7 @@
             android:padding="12dp"
             android:text="Update Place"
             android:textColor="@color/white"
-            android:textSize="34sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
