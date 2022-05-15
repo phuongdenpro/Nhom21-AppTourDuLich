@@ -123,14 +123,14 @@
         android:layout_height="59dp"
         android:layout_marginTop="129dp"
         android:layout_marginBottom="80dp"
+        android:background="@drawable/botron_btn_register"
+        android:fontFamily="sans-serif-black"
+
         android:text="Register"
-        app:cornerRadius="50sp"
+        android:textSize="20dp"
 
         app:backgroundTint="@null"
-        android:background="@drawable/botron_btn_register"
-
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-black"
+        app:cornerRadius="50sp"
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
         app:layout_constraintHorizontal_bias="0.493"
@@ -167,13 +167,13 @@
         android:id="@+id/tv_sign_in_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
+        android:layout_marginStart="4dp"
         android:text="Sign in here"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/view3"
         app:layout_constraintVertical_bias="0.506" />
 

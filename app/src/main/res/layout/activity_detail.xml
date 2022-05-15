@@ -60,38 +60,37 @@
         android:id="@+id/located_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Thành phố Hồ Chí Minh,Việt Nam"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_detail" />
 
     <TextView
         android:id="@+id/descriptivePlace_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="110dp"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="sans-serif"
-        android:text="Thành phố Hồ Chí Minh,Việt Nam"
+        android:text="Thành phố Hồ Chí Minh"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/located_detail" />
 
     <TextView
         android:id="@+id/price_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="252dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="204dp"
         android:fontFamily="sans-serif"
         android:text="100USD"
         android:textColor="@color/black"
@@ -105,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:fontFamily="sans-serif"
-        android:text="Price"
+        android:text="Price(USD): "
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/price_detail"
@@ -150,13 +149,25 @@
 
     <ImageView
         android:id="@+id/imageView_addtail"
-        android:layout_width="40dp"
-        android:layout_height="45dp"
+        android:layout_width="27dp"
+        android:layout_height="38dp"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
         app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toStartOf="@+id/view7"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/plus_button" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:text="Description: "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/located_detail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
